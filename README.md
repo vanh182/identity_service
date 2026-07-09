@@ -1,6 +1,6 @@
 # 🔐 Identity Service
 
-> A Spring Boot RESTful backend service providing user authentication, authorization, and identity management using JWT and Role-Based Access Control (RBAC).
+> A Spring Boot RESTful backend service providing secure authentication, authorization, and identity management using JWT and Role-Based Access Control (RBAC).
 
 ![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-success?logo=springboot)
@@ -12,22 +12,36 @@
 
 # 📖 Overview
 
-Identity Service is a backend application built with Spring Boot that provides secure user authentication and authorization for modern web applications.
+Identity Service is a backend application built with Spring Boot that provides secure authentication and authorization for modern web applications.
 
-The project implements JWT-based authentication, role and permission management, RESTful APIs, and follows a layered architecture for maintainability and scalability.
+The project implements JWT-based authentication, Role-Based Access Control (RBAC), user and permission management, and follows a layered architecture to ensure maintainability and scalability.
 
 ---
 
 # ✨ Features
 
-- 🔐 User Authentication
-- 👤 User Management
-- 🛡 JWT Access Token
-- 🔑 Role-Based Access Control (RBAC)
-- 📋 Permission Management
-- 🌐 RESTful APIs
-- ⚠ Global Exception Handling
-- 🗂 DTO & Mapper Pattern
+* 🔐 User Authentication
+* 👤 User Management
+* 🛡 JWT Access Token
+* 🔑 Role-Based Access Control (RBAC)
+* 📋 Permission Management
+* 🌐 RESTful APIs
+* ⚠ Global Exception Handling
+* 🗂 DTO & Mapper Pattern
+
+---
+
+# 🛠 Tech Stack
+
+| Category   | Technologies         |
+| ---------- | -------------------- |
+| Language   | Java 17              |
+| Framework  | Spring Boot 3        |
+| Security   | Spring Security, JWT |
+| ORM        | Spring Data JPA      |
+| Database   | MySQL                |
+| Build Tool | Maven                |
+| API        | RESTful API          |
 
 ---
 
@@ -46,21 +60,7 @@ Repository
  Database
 ```
 
-The project follows a layered architecture to separate business logic, data access, and API handling.
-
----
-
-# 🛠 Tech Stack
-
-| Category | Technologies |
-|----------|--------------|
-| Language | Java 17 |
-| Framework | Spring Boot 3 |
-| Security | Spring Security, JWT |
-| ORM | Spring Data JPA |
-| Build Tool | Maven |
-| Database | MySQL |
-| API | RESTful API |
+The project follows a layered architecture that separates API handling, business logic, and data access.
 
 ---
 
@@ -82,92 +82,85 @@ src
 
 ---
 
-# 🚀 Core Modules
+# 📸 Screenshots
 
-## Authentication
+> Add screenshots of the application here.
 
-- User Login
-- JWT Token Generation
-- Token Validation
-- Token Introspection
+Example:
 
----
+* Login API via Postman
+* JWT Token Response
+* User Management APIs
+* Database Tables
 
-## User Management
-
-- Create User
-- Update User
-- Retrieve User Information
-- Delete User
-
----
-
-## Authorization
-
-Role-Based Access Control (RBAC) is implemented using:
-
-- Roles
-- Permissions
-- Spring Security
-
-This design allows flexible permission assignment and secure API access.
+```text
+docs/
+└── screenshots/
+    ├── login.png
+    ├── token.png
+    ├── users.png
+    └── database.png
+```
 
 ---
 
-# 📡 REST APIs
+# 🚀 How to Run
 
-Example API endpoints:
+## Prerequisites
 
-| Method | Endpoint | Description |
-|---------|-----------|-------------|
-| POST | `/auth/token` | Authenticate user |
-| POST | `/auth/introspect` | Validate JWT token |
-| POST | `/users` | Create new user |
-| GET | `/users` | Retrieve users |
-| PUT | `/users/{id}` | Update user |
-| DELETE | `/users/{id}` | Delete user |
+* Java 17+
+* Maven
+* MySQL
 
-> Actual endpoints may vary depending on project configuration.
+## Clone the repository
 
----
+```bash
+git clone https://github.com/your-username/identity-service.git
+cd identity-service
+```
 
-# 🔒 Security
+## Configure Database
 
-The application secures APIs using:
+Update `application.yml` (or `application.properties`):
 
-- JWT Authentication
-- Spring Security Filter Chain
-- Password Encryption
-- Role-Based Authorization
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/identity_service
+spring.datasource.username=root
+spring.datasource.password=your_password
+```
 
----
+## Build the project
 
-# 📈 Highlights
+```bash
+mvn clean install
+```
 
-- Layered architecture
-- Clean separation of concerns
-- DTO and Mapper pattern
-- Global exception handling
-- RESTful API design
-- JWT-based authentication
-- RBAC implementation
+## Run the application
+
+```bash
+mvn spring-boot:run
+```
+
+The application will start at:
+
+```text
+http://localhost:8080
+```
 
 ---
 
 # 🚀 Future Improvements
 
-- Refresh Token support
-- OAuth2 / OpenID Connect
-- Docker deployment
-- API documentation with Swagger/OpenAPI
-- Unit & Integration Testing
+* Refresh Token support
+* OAuth2 / OpenID Connect
+* Docker deployment
+* Swagger / OpenAPI documentation
+* Unit & Integration Testing
 
 ---
 
-# 👨‍💻 Author
+# 📄 License
 
-**Van Anh**
+This project is licensed under the MIT License.
 
-Software Engineer
-
-Interested in Backend Engineering, Artificial Intelligence, and Distributed Systems.
+Feel free to use, modify, and distribute this project for educational and personal purposes.
